@@ -22,7 +22,7 @@ type UserProps = {
   users?: Task["users"];
 };
 
-// display a task's descriptio if it exists, otherwise display a link to add one
+// display a task's description if it exists, otherwise display a link to add one
 export const DescriptionHeader = ({ description }: DescriptionProps) => {
   if (description) {
     return (
