@@ -3,7 +3,7 @@ import { GraphQLFormattedError } from "graphql";
 type Error = {
   message: string;
   statusCode: string;
-};
+}
 
 const customFetch = async (url: string, options: RequestInit) => {
   const accessToken = localStorage.getItem("access_token");
@@ -21,7 +21,7 @@ const customFetch = async (url: string, options: RequestInit) => {
 };
 
 const getGraphQLErrors = (
-  body: Record<"error", GraphQLFormattedError[] | undefined>
+  body: Record<"errors", GraphQLFormattedError[] | undefined>,
 ): Error | null => {
   if (!body) {
     return {
@@ -44,7 +44,7 @@ const getGraphQLErrors = (
   return null;
 };
 
-export const fetchWrapper  =async (url: string, options: RequestInit) => {
+export const fetchWrapper  = async (url: string, options: RequestInit) => {
   const response = await customFetch(url, options);
 
   const responseClone = response.clone();
