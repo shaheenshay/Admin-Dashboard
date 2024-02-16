@@ -81,7 +81,7 @@ const List = ({ children }: React.PropsWithChildren) => {
       unassignedStage,
       columns: grouped,
     };
-  }, [tasks, stages]);
+  }, [stages, tasks]);
 
   const handleAddCard = (args: { stageId: string }) => {
     const path =
@@ -128,7 +128,7 @@ const List = ({ children }: React.PropsWithChildren) => {
           <KanbanColumn
             id="unassigned"
             title={"unassigned"}
-            count={taskStages.unassignedStage?.length || 0}
+            count={taskStages.unassignedStage.length || 0}
             onAddClick={() => handleAddCard({ stageId: "unassigned" })}
           >
             {taskStages.unassignedStage.map((task) => (

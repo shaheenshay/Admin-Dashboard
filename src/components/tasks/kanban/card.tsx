@@ -25,14 +25,14 @@ import dayjs from "dayjs";
 import React, { memo, useMemo } from "react";
 
 type ProjectCardProps = {
-  id: string;
-  title: string;
-  updatedAt: string;
-  dueDate?: string;
+  id: string,
+  title: string,
+  updatedAt: string,
+  dueDate?: string,
   users?: {
-    id: string;
-    name: string;
-    avatarUrl?: User["avatarUrl"];
+    id: string,
+    name: string,
+    avatarUrl?: User["avatarUrl"],
   }[];
 };
 
@@ -98,7 +98,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
     >
       <Card
         size="small"
-        title={<Text ellipsis={{ tooltip: title }}></Text>}
+        title={<Text ellipsis={{ tooltip: title }}>{title}</Text>}
         onClick={() => edit('tasks', id, 'replace')}
         extra={
           <Dropdown
